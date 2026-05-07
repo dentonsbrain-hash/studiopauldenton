@@ -86,7 +86,7 @@ button.sound-toggle.active {
   max-width: 920px;
   text-align: center;
   padding: 0 1.5rem;
-  margin-top: 1000px;
+  margin-top: 0; /* Changed from 1000px for better mobile compatibility */
   opacity: 0;
   transition: opacity 1s ease;
 }
@@ -230,5 +230,96 @@ button.sound-toggle.active {
 
   .content {
     padding-top: 3rem;
+  }
+}
+
+/* Enhanced mobile optimizations */
+@media (max-width: 768px) {
+  .hero-content {
+    margin-top: 0; /* Remove large margin for mobile */
+    padding: 0 1rem;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(2rem, 8vw, 3.5rem);
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+    margin: 1rem auto 0;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .content {
+    padding: 2rem 1rem 1rem;
+  }
+
+  .content h2 {
+    font-size: 1.5rem;
+  }
+
+  .tab-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tab-button {
+    width: 100%;
+    max-width: 200px;
+    padding: 1rem;
+  }
+
+  .tab-panel {
+    padding: 1.25rem;
+  }
+
+  .subscribe-form {
+    flex-direction: column;
+  }
+
+  .subscribe-form input {
+    flex: 1;
+    min-width: auto;
+  }
+
+  .subscribe-form button {
+    width: 100%;
+    min-width: auto;
+  }
+
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content {
+    padding: 0 0.75rem;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(1.8rem, 10vw, 3rem);
+  }
+
+  .eyebrow {
+    font-size: 0.75rem;
+  }
+
+  .content h2 {
+    font-size: 1.25rem;
+  }
+
+  .tab-panel h3 {
+    font-size: 1.25rem;
+  }
+
+  .tab-panel {
+    padding: 1rem;
   }
 }

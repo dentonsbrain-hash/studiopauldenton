@@ -21,6 +21,10 @@ setTimeout(() => {
 const soundToggle = document.querySelector('.sound-toggle');
 const heroVideo = document.querySelector('.hero-video');
 
+if (heroVideo) {
+  heroVideo.volume = 0.2; // Set volume to 20%
+}
+
 if (soundToggle && heroVideo) {
   soundToggle.addEventListener('click', () => {
     const isMuted = heroVideo.muted;

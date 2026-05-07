@@ -86,7 +86,7 @@ button.sound-toggle.active {
   max-width: 920px;
   text-align: center;
   padding: 0 1.5rem;
-  margin-top: 0; /* Changed from 1000px for better mobile compatibility */
+  margin-top: 1000px; /* Reinstated original margin */
   opacity: 0;
   transition: opacity 1s ease;
 }

@@ -23,9 +23,13 @@ const heroVideo = document.querySelector('.hero-video');
 
 if (heroVideo) {
   heroVideo.volume = 0.2; // Set volume to 20%
+  heroVideo.muted = false;
 }
 
 if (soundToggle && heroVideo) {
+  soundToggle.textContent = heroVideo.muted ? 'Unmute' : 'Mute';
+  soundToggle.classList.toggle('active', !heroVideo.muted);
+
   soundToggle.addEventListener('click', () => {
     const isMuted = heroVideo.muted;
     heroVideo.muted = !isMuted;

@@ -23,7 +23,12 @@ const heroVideo = document.querySelector('.hero-video');
 
 if (heroVideo) {
   heroVideo.volume = 0.2; // Set volume to 20%
-  heroVideo.muted = false;
+  heroVideo.muted = true;
+
+  heroVideo.play().catch(() => {
+    // Autoplay with sound may be blocked by browser policies.
+    heroVideo.muted = true;
+  });
 }
 
 if (soundToggle && heroVideo) {

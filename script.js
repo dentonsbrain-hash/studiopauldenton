@@ -28,6 +28,9 @@ if (heroVideo) {
   heroVideo.play().catch(() => {
     // Autoplay with sound may be blocked by browser policies.
     heroVideo.muted = true;
+    heroVideo.play().catch(() => {
+      console.warn('Video playback requires user interaction.');
+    });
   });
 }
 
@@ -43,6 +46,9 @@ if (soundToggle && heroVideo) {
 
   soundToggle.addEventListener('click', () => {
     heroVideo.muted = !heroVideo.muted;
+    heroVideo.play().catch(() => {
+      console.warn('Video playback requires user interaction.');
+    });
     updateSoundToggle();
   });
 }

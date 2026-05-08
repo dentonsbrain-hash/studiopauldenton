@@ -23,7 +23,7 @@ const heroVideo = document.querySelector('.hero-video');
 
 if (heroVideo) {
   heroVideo.volume = 0.2; // Set volume to 20%
-  heroVideo.muted = true;
+  heroVideo.muted = false;
 
   heroVideo.play().catch(() => {
     // Autoplay with sound may be blocked by browser policies.

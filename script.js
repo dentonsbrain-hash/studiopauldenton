@@ -50,20 +50,29 @@ if (soundToggle && heroVideo) {
 const tabButtons = document.querySelectorAll('.tab-button');
 const tabPanels = document.querySelectorAll('.tab-panel');
 
+const activateTab = (target) => {
+  if (!target) return;
+
+  tabButtons.forEach((btn) => {
+    const isActive = btn.dataset.tab === target;
+    btn.classList.toggle('active', isActive);
+    btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+  });
+
+  tabPanels.forEach((panel) => {
+    panel.classList.toggle('active', panel.dataset.panel === target);
+  });
+};
+
 tabButtons.forEach((button) => {
   button.addEventListener('click', () => {
-    const target = button.dataset.tab;
-    if (!target) return;
+    activateTab(button.dataset.tab);
+  });
+});
 
-    tabButtons.forEach((btn) => {
-      const isActive = btn === button;
-      btn.classList.toggle('active', isActive);
-      btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
-    });
-
-    tabPanels.forEach((panel) => {
-      panel.classList.toggle('active', panel.dataset.panel === target);
-    });
+document.querySelectorAll('a[href="#subscribe"]').forEach((link) => {
+  link.addEventListener('click', () => {
+    activateTab('subscribe');
   });
 });
 

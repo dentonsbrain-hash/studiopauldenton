@@ -46,16 +46,46 @@ button.sound-toggle:hover {
   margin-top: 1.75rem;
 }
 
-button.sound-toggle {
-  padding: 0.8rem 1.2rem;
-  background: rgba(255, 255, 255, 0.92);
-  color: #020617;
-  font-weight: 700;
+.sound-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 10;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: rgba(2, 6, 23, 0.52);
+  color: var(--text);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 12px 30px rgba(2, 6, 23, 0.28);
 }
 
-button.sound-toggle.active {
-  background: rgba(38, 154, 167, 0.96);
-  color: white;
+.sound-toggle:hover {
+  background: rgba(2, 6, 23, 0.72);
+}
+
+.sound-icon {
+  width: 1.2rem;
+  height: 1.2rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+}
+
+.sound-icon-off {
+  display: none;
+}
+
+.sound-toggle.is-muted .sound-icon-on {
+  display: none;
+}
+
+.sound-toggle.is-muted .sound-icon-off {
+  display: block;
 }
 
 .video-hero {

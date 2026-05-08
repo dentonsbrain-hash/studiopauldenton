@@ -32,14 +32,18 @@ if (heroVideo) {
 }
 
 if (soundToggle && heroVideo) {
-  soundToggle.textContent = heroVideo.muted ? 'Unmute' : 'Mute';
-  soundToggle.classList.toggle('active', !heroVideo.muted);
+  const updateSoundToggle = () => {
+    soundToggle.classList.toggle('is-muted', heroVideo.muted);
+    soundToggle.setAttribute('aria-label', heroVideo.muted ? 'Unmute video sound' : 'Mute video sound');
+    soundToggle.setAttribute('aria-pressed', heroVideo.muted ? 'true' : 'false');
+  };
+
+  updateSoundToggle();
+  heroVideo.addEventListener('volumechange', updateSoundToggle);
 
   soundToggle.addEventListener('click', () => {
-    const isMuted = heroVideo.muted;
-    heroVideo.muted = !isMuted;
-    soundToggle.textContent = heroVideo.muted ? 'Unmute' : 'Mute';
-    soundToggle.classList.toggle('active', !heroVideo.muted);
+    heroVideo.muted = !heroVideo.muted;
+    updateSoundToggle();
   });
 }
 

@@ -7,6 +7,19 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <button class="sound-toggle" type="button" aria-label="Mute video sound" aria-pressed="false">
+    <svg class="sound-icon sound-icon-on" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M4 9v6h4l5 4V5L8 9H4z"></path>
+      <path d="M16 8.5a4 4 0 0 1 0 7"></path>
+      <path d="M18.5 6a7 7 0 0 1 0 12"></path>
+    </svg>
+    <svg class="sound-icon sound-icon-off" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M4 9v6h4l5 4V5L8 9H4z"></path>
+      <path d="M17 9l5 5"></path>
+      <path d="M22 9l-5 5"></path>
+    </svg>
+  </button>
+
   <div class="video-hero">
     <video class="hero-video" autoplay loop playsinline>
       <source src="teaser_sound_fix_1.mp4" type="video/mp4" />
@@ -19,7 +32,6 @@
       <p>Subscribe to be notified when drop is confirmed</p>
       <div class="hero-actions">
         <a class="button" href="#subscribe">Subscribe</a>
-        <button class="button sound-toggle" type="button">Mute</button>
       </div>
     </div>
   </div>

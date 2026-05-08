@@ -22,8 +22,10 @@ const soundToggle = document.querySelector('.sound-toggle');
 const heroVideo = document.querySelector('.hero-video');
 
 if (heroVideo) {
+  const shouldStartMuted = window.matchMedia('(max-width: 768px), (pointer: coarse)').matches;
+
   heroVideo.volume = 0.2; // Set volume to 20%
-  heroVideo.muted = false;
+  heroVideo.muted = shouldStartMuted;
 
   heroVideo.play().catch(() => {
     // Autoplay with sound may be blocked by browser policies.

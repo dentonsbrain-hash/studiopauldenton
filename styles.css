@@ -91,6 +91,7 @@ button.sound-toggle:hover {
 .video-hero {
   position: relative;
   min-height: 100vh;
+  min-height: 100svh;
   display: grid;
   place-items: center;
   overflow: hidden;

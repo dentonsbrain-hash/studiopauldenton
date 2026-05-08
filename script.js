@@ -10,13 +10,13 @@ if (video) {
   });
 }
 
-// Fade in hero content after 15 seconds
+// Fade in hero content after 60 seconds
 setTimeout(() => {
   const heroContent = document.querySelector('.hero-content');
   if (heroContent) {
     heroContent.style.opacity = '1';
   }
-}, 15000);
+}, 60000);
 
 const soundToggle = document.querySelector('.sound-toggle');
 const heroVideo = document.querySelector('.hero-video');

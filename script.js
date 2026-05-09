@@ -83,12 +83,3 @@ document.querySelectorAll('a[href="#subscribe"]').forEach((link) => {
     activateTab('subscribe');
   });
 });
-
-const subscribeForm = document.querySelector('.subscribe-form');
-if (subscribeForm) {
-  subscribeForm.addEventListener('submit', (event) => {
-    event.preventDefault();
-    alert('Thanks! You will be notified when launch details are ready.');
-    subscribeForm.reset();
-  });
-}

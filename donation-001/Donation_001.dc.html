@@ -24,6 +24,29 @@
     @keyframes scrollHint{ 0%{ transform:translateY(0); opacity:.2; } 50%{ opacity:1; } 100%{ transform:translateY(10px); opacity:.2; } }
     [data-reveal]{ opacity:0; transform:translateY(28px); }
     [data-reveal][data-shown]{ opacity:1; transform:none; }
+
+    /* ===== MOBILE MODE (phones) ===== */
+    @media (max-width: 760px) {
+      [data-m="hero-sec"]{ padding:18px 18px 36px !important; min-height:auto !important; }
+      [data-m="meta"]{ font-size:9px !important; gap:8px !important; flex-wrap:wrap !important; row-gap:6px !important; }
+      [data-m="hero-grid"]{ display:flex !important; flex-direction:column !important; gap:8px !important; }
+      [data-cutout-box]{ height:auto !important; }
+      [data-m="cutout-inner"]{ position:static !important; transform:none !important; height:auto !important; display:flex !important; justify-content:center !important; }
+      [data-m="cutout-img"]{ position:relative !important; height:auto !important; width:auto !important; max-height:44vh !important; max-width:86% !important; margin:0 auto !important; }
+      [data-m="fig"]{ display:none !important; }
+      [data-m="stats"]{ grid-template-columns:repeat(2,1fr) !important; margin-top:30px !important; }
+      [data-m="marq"]{ font-size:11px !important; letter-spacing:.14em !important; }
+      [data-m="formtext"]{ position:static !important; left:auto !important; right:auto !important; bottom:auto !important; padding:22px 18px 26px !important; flex-direction:column !important; align-items:flex-start !important; }
+      [data-m="formtext"] > div:last-child{ text-align:left !important; max-width:none !important; }
+      [data-m="formband-overlay"]{ background:linear-gradient(180deg, rgba(13,13,15,.35) 0%, rgba(13,13,15,0) 55%) !important; }
+      [data-m="feat-sec"]{ padding:8px 18px 56px !important; }
+      [data-m="feature"]{ display:flex !important; flex-direction:column !important; align-items:stretch !important; gap:18px !important; padding:38px 0 !important; }
+      [data-m="feature"] > div:first-child{ height:300px !important; width:100% !important; }
+      [data-m="feature"] h3{ font-size:38px !important; }
+      [data-m="acquire"]{ flex-direction:column !important; align-items:flex-start !important; padding:30px 24px !important; margin-top:48px !important; }
+      [data-m="acquire"] > div:last-child{ text-align:left !important; width:100% !important; }
+      [data-m="indexnote"]{ display:none !important; }
+    }
   </style>
   <script src="./image-slot.js"></script>
 </helmet>
@@ -34,15 +57,15 @@
     <div style="position:absolute; inset:0; background-image:linear-gradient(#ffffff0a 1px,transparent 1px),linear-gradient(90deg,#ffffff0a 1px,transparent 1px); background-size:80px 80px; pointer-events:none;"></div>
 
     <!-- hero -->
-    <section style="position:relative; min-height:100vh; padding:28px 40px; display:flex; flex-direction:column;">
-      <div style="display:flex; justify-content:space-between; font-family:'Space Mono', monospace; font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:#7a7a78;">
+    <section data-m="hero-sec" style="position:relative; min-height:100vh; padding:28px 40px; display:flex; flex-direction:column;">
+      <div data-m="meta" style="display:flex; justify-content:space-between; font-family:'Space Mono', monospace; font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:#7a7a78;">
         <span>● REC — DONATION_001</span>
         <span>LAT 51.50 / LON -0.12</span>
         <span>EDITION {{ edition }}</span>
       </div>
 
       <div style="flex:1; display:flex; flex-direction:column; justify-content:center; position:relative;">
-        <div style="display:grid; grid-template-columns:1.05fr .95fr; gap:40px; align-items:center;">
+        <div data-m="hero-grid" style="display:grid; grid-template-columns:1.05fr .95fr; gap:40px; align-items:center;">
           <div data-reveal style="transition:all 1s cubic-bezier(.2,.7,.2,1);">
             <div style="font-family:'Space Mono', monospace; font-size:12px; letter-spacing:.3em; color:#ff4a1c; text-transform:uppercase;">[ OBJECT — COLLECTIBLE / 001 ]</div>
             <h1 data-hero style="font-size:clamp(52px,8.5vw,150px); line-height:.86; font-weight:700; letter-spacing:-.03em; margin:18px 0;">DONATION<br>_001</h1>
@@ -51,18 +74,18 @@
 
           <div data-reveal style="transition:all 1.1s cubic-bezier(.2,.7,.2,1) .12s; position:relative;">
             <div data-cutout-box style="position:relative; height:clamp(440px, calc(240vh - 2880px), 2600px);">
-              <div style="position:absolute; top:50%; left:0; height:200%; transform:translate(calc(-44% + 110px),-50%); pointer-events:none; z-index:3;">
+              <div data-m="cutout-inner" style="position:absolute; top:50%; left:0; height:200%; transform:translate(calc(-44% + 110px),-50%); pointer-events:none; z-index:3;">
                 <div style="position:absolute; inset:-14%; z-index:0; background:radial-gradient(ellipse 52% 50% at 50% 50%, rgba(166,226,46,.12), rgba(120,150,255,.07) 45%, rgba(0,0,0,0) 72%); filter:blur(10px); animation:floatGlow 6.5s ease-in-out -2.2s infinite;"></div>
-                <img src="images/cutout.png" alt="Donation_001 — profile" style="position:relative; z-index:1; display:block; height:100%; width:auto; max-width:none; object-fit:contain; animation:floatY 9s ease-in-out infinite;">
+                <img data-m="cutout-img" src="images/cutout.png" alt="Donation_001 — profile" style="position:relative; z-index:1; display:block; height:100%; width:auto; max-width:none; object-fit:contain; animation:floatY 9s ease-in-out infinite;">
               </div>
             </div>
             </div>
-            <div style="position:absolute; right:4px; bottom:0; z-index:4; font-family:'Space Mono', monospace; font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:#7a7a78;">Fig. 001 — Profile / flow form</div>
+            <div data-m="fig" style="position:absolute; right:4px; bottom:0; z-index:4; font-family:'Space Mono', monospace; font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:#7a7a78;">Fig. 001 — Profile / flow form</div>
           </div>
         </div>
 
         <!-- data readout -->
-        <div data-reveal style="transition:all 1.1s cubic-bezier(.2,.7,.2,1) .15s; display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:#26261f; border:1px solid #26261f; margin-top:40px;">
+        <div data-reveal data-m="stats" style="transition:all 1.1s cubic-bezier(.2,.7,.2,1) .15s; display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:#26261f; border:1px solid #26261f; margin-top:40px;">
           <sc-for list="{{ statsB }}" as="s" hint-placeholder-count="4">
             <div style="background:#0d0d0f; padding:20px;">
               <div style="font-family:'Space Mono',monospace; font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:#7a7a78;">{{ s.label }}</div>
@@ -72,12 +95,12 @@
         </div>
       </div>
 
-      <div style="font-family:'Space Mono', monospace; font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:#5f5f5d;">↓ INDEX BELOW — 03 ENTRIES</div>
+      <div data-m="indexnote" style="font-family:'Space Mono', monospace; font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:#5f5f5d;">↓ INDEX BELOW — 03 ENTRIES</div>
     </section>
 
     <!-- marquee -->
     <div style="position:relative; border-top:1px solid #26261f; border-bottom:1px solid #26261f; padding:16px 0; overflow:hidden; white-space:nowrap;">
-      <div style="display:inline-block; animation:marq 26s linear infinite; font-family:'Space Mono', monospace; font-size:14px; letter-spacing:.2em; text-transform:uppercase; color:#e8e8e6;">
+      <div data-m="marq" style="display:inline-block; animation:marq 26s linear infinite; font-family:'Space Mono', monospace; font-size:14px; letter-spacing:.2em; text-transform:uppercase; color:#e8e8e6;">
         <span style="color:#ff4a1c;">✦</span> ARTIST-DRIVEN &nbsp;&nbsp;/&nbsp;&nbsp; LIMITED EDITION OF {{ edition }} &nbsp;&nbsp;/&nbsp;&nbsp; DESIGN · NARRATIVE · MYTHOLOGY &nbsp;&nbsp;/&nbsp;&nbsp; {{ price }} &nbsp;&nbsp;<span style="color:#ff4a1c;">✦</span> ARTIST-DRIVEN &nbsp;&nbsp;/&nbsp;&nbsp; LIMITED EDITION OF {{ edition }} &nbsp;&nbsp;/&nbsp;&nbsp; DESIGN · NARRATIVE · MYTHOLOGY &nbsp;&nbsp;/&nbsp;&nbsp; {{ price }} &nbsp;&nbsp;
       </div>
     </div>
@@ -93,8 +116,8 @@
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" fill="currentColor" stroke="none"></polygon><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path><path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path></svg>
         </sc-if>
       </button>
-      <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(13,13,15,.55) 0%, rgba(13,13,15,.05) 38%, rgba(13,13,15,.92) 100%);"></div>
-      <div style="position:absolute; left:40px; right:40px; bottom:40px; display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:20px;">
+      <div data-m="formband-overlay" style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(13,13,15,.55) 0%, rgba(13,13,15,.05) 38%, rgba(13,13,15,.92) 100%);"></div>
+      <div data-m="formtext" style="position:absolute; left:40px; right:40px; bottom:40px; display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:20px;">
         <div>
           <div style="font-family:'Space Mono', monospace; font-size:12px; letter-spacing:.22em; text-transform:uppercase; color:#ff4a1c;">Specimen / 006 — Form study</div>
           <h2 style="font-family:'Space Grotesk', sans-serif; font-size:clamp(34px,5vw,76px); line-height:.95; font-weight:700; letter-spacing:-.02em; color:#e8e8e6; margin-top:12px; max-width:18ch;">No Beginning, No End</h2>
@@ -104,9 +127,9 @@
     </div>
 
     <!-- features -->
-    <section style="position:relative; padding:24px 40px 80px;">
+    <section data-m="feat-sec" style="position:relative; padding:24px 40px 80px;">
       <!-- Feature 01 -->
-      <div data-reveal style="transition:all 1s cubic-bezier(.2,.7,.2,1); display:grid; grid-template-columns:1fr 1fr; gap:56px; padding:56px 0; border-top:1px solid #26261f; align-items:center;">
+      <div data-reveal data-m="feature" style="transition:all 1s cubic-bezier(.2,.7,.2,1); display:grid; grid-template-columns:1fr 1fr; gap:56px; padding:56px 0; border-top:1px solid #26261f; align-items:center;">
         <div style="position:relative; height:clamp(300px,44vh,440px); overflow:hidden;">
           <div style="width:100%; height:100%; background-image:url(images/artist-driven.jpg); background-size:cover; background-position:50% 42%; -webkit-mask-image:radial-gradient(ellipse 78% 82% at 50% 50%, #000 56%, rgba(0,0,0,0) 90%); mask-image:radial-gradient(ellipse 78% 82% at 50% 50%, #000 56%, rgba(0,0,0,0) 90%);"></div>
           <div style="position:absolute; top:6px; left:0; font-family:'Space Mono', monospace; font-size:13px; letter-spacing:.1em; color:#ff4a1c;">01</div>
@@ -119,7 +142,7 @@
       </div>
 
       <!-- Feature 02 -->
-      <div data-reveal style="transition:all 1s cubic-bezier(.2,.7,.2,1); display:grid; grid-template-columns:1fr 1fr; gap:56px; padding:56px 0; border-top:1px solid #26261f; align-items:center;">
+      <div data-reveal data-m="feature" style="transition:all 1s cubic-bezier(.2,.7,.2,1); display:grid; grid-template-columns:1fr 1fr; gap:56px; padding:56px 0; border-top:1px solid #26261f; align-items:center;">
         <div style="position:relative; height:clamp(300px,44vh,440px); overflow:hidden;">
           <div style="width:100%; height:100%; background-image:url(images/black.jpg); background-size:cover; background-position:50% 42%; -webkit-mask-image:radial-gradient(ellipse 78% 82% at 50% 50%, #000 56%, rgba(0,0,0,0) 90%); mask-image:radial-gradient(ellipse 78% 82% at 50% 50%, #000 56%, rgba(0,0,0,0) 90%);"></div>
           <div style="position:absolute; top:6px; left:0; font-family:'Space Mono', monospace; font-size:13px; letter-spacing:.1em; color:#ff4a1c;">02</div>
@@ -132,7 +155,7 @@
       </div>
 
       <!-- Feature 03 -->
-      <div data-reveal style="transition:all 1s cubic-bezier(.2,.7,.2,1); display:grid; grid-template-columns:1fr 1fr; gap:56px; padding:56px 0; border-top:1px solid #26261f; align-items:center;">
+      <div data-reveal data-m="feature" style="transition:all 1s cubic-bezier(.2,.7,.2,1); display:grid; grid-template-columns:1fr 1fr; gap:56px; padding:56px 0; border-top:1px solid #26261f; align-items:center;">
         <div style="position:relative; height:clamp(300px,44vh,440px); overflow:hidden;">
           <div style="width:100%; height:100%; background-image:url(images/design-myth.jpg); background-size:cover; background-position:50% 42%; -webkit-mask-image:radial-gradient(ellipse 78% 82% at 50% 50%, #000 56%, rgba(0,0,0,0) 90%); mask-image:radial-gradient(ellipse 78% 82% at 50% 50%, #000 56%, rgba(0,0,0,0) 90%);"></div>
           <div style="position:absolute; top:6px; left:0; font-family:'Space Mono', monospace; font-size:13px; letter-spacing:.1em; color:#ff4a1c;">03</div>
@@ -145,7 +168,7 @@
       </div>
 
       <!-- Feature 04 -->
-      <div data-reveal style="transition:all 1s cubic-bezier(.2,.7,.2,1); display:grid; grid-template-columns:1fr 1fr; gap:56px; padding:56px 0; border-top:1px solid #26261f; align-items:center;">
+      <div data-reveal data-m="feature" style="transition:all 1s cubic-bezier(.2,.7,.2,1); display:grid; grid-template-columns:1fr 1fr; gap:56px; padding:56px 0; border-top:1px solid #26261f; align-items:center;">
         <div style="position:relative; height:clamp(300px,44vh,440px); overflow:hidden;">
           <div style="width:100%; height:100%; background-image:url(images/sighting-01.png); background-size:cover; background-position:50% 42%; -webkit-mask-image:radial-gradient(ellipse 78% 82% at 50% 50%, #000 56%, rgba(0,0,0,0) 90%); mask-image:radial-gradient(ellipse 78% 82% at 50% 50%, #000 56%, rgba(0,0,0,0) 90%);"></div>
           <div style="position:absolute; top:6px; left:0; font-family:'Space Mono', monospace; font-size:13px; letter-spacing:.1em; color:#ff4a1c;">04</div>
@@ -157,13 +180,13 @@
         </div>
       </div>
 
-      <div data-reveal style="transition:all 1s cubic-bezier(.2,.7,.2,1); margin-top:64px; border:1px solid #26261f; padding:48px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:24px;">
+      <div data-reveal data-m="acquire" style="transition:all 1s cubic-bezier(.2,.7,.2,1); margin-top:64px; border:1px solid #26261f; padding:48px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:24px;">
         <div>
           <div style="font-family:'Space Mono', monospace; font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:#ff4a1c;">ACQUIRE / 001 — 0{{ edition }}</div>
           <h2 style="font-family:'Space Grotesk', sans-serif; font-size:clamp(36px,5vw,68px); line-height:.95; font-weight:700; letter-spacing:-.02em; margin-top:10px; color:#e8e8e6;">Reserve the object.</h2>
         </div>
         <div style="text-align:right;">
-          <div style="font-size:54px; font-weight:700; letter-spacing:-.02em; color:#ff4a1c;">{{ price }}</div>
+          <div data-price style="font-size:54px; font-weight:700; letter-spacing:-.02em; color:#ff4a1c;">{{ price }}</div>
           <button style="font-family:'Space Mono', monospace; font-size:13px; letter-spacing:.16em; text-transform:uppercase; background:#ff4a1c; color:#0d0d0f; border:none; padding:16px 30px; cursor:pointer; margin-top:14px;" style-hover="{{ hoverAcid }}">[ REQUEST ACCESS ]</button>
         </div>
       </div>
@@ -172,7 +195,7 @@
 
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;price&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;£3,500&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;editionSize&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:99,&quot;min&quot;:1,&quot;max&quot;:250,&quot;tsType&quot;:&quot;number&quot;},&quot;heroTextSize&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:340,&quot;min&quot;:48,&quot;max&quot;:340,&quot;step&quot;:2,&quot;tsType&quot;:&quot;number&quot;},&quot;cutoutSizeMin&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:520,&quot;min&quot;:200,&quot;max&quot;:3000,&quot;step&quot;:20,&quot;tsType&quot;:&quot;number&quot;},&quot;cutoutSizeMax&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:4608,&quot;min&quot;:800,&quot;max&quot;:7000,&quot;step&quot;:20,&quot;tsType&quot;:&quot;number&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;price&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;£3,500&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;editionSize&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:99,&quot;min&quot;:1,&quot;max&quot;:250,&quot;tsType&quot;:&quot;number&quot;},&quot;heroTextSize&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:150,&quot;min&quot;:48,&quot;max&quot;:340,&quot;step&quot;:2,&quot;tsType&quot;:&quot;number&quot;},&quot;priceTextSize&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:24,&quot;min&quot;:24,&quot;max&quot;:160,&quot;step&quot;:2,&quot;tsType&quot;:&quot;number&quot;},&quot;cutoutSizeMin&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:520,&quot;min&quot;:200,&quot;max&quot;:3000,&quot;step&quot;:20,&quot;tsType&quot;:&quot;number&quot;},&quot;cutoutSizeMax&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:4608,&quot;min&quot;:800,&quot;max&quot;:7000,&quot;step&quot;:20,&quot;tsType&quot;:&quot;number&quot;}}">
 class Component extends DCLogic {
   state = { muted: true };
 
@@ -181,9 +204,14 @@ class Component extends DCLogic {
 
   _sizeHero(){
     const h = document.querySelector('[data-hero]');
-    if (!h) return;
-    const max = Number(this.props.heroTextSize ?? 150);   // max px size of DONATION_001
-    h.style.fontSize = 'clamp(40px, 8.5vw, ' + max + 'px)';
+    if (h){
+      const max = Number(this.props.heroTextSize ?? 150);   // max px size of DONATION_001
+      h.style.fontSize = 'clamp(40px, 8.5vw, ' + max + 'px)';
+    }
+    const p = document.querySelector('[data-price]');
+    if (p){
+      p.style.fontSize = Number(this.props.priceTextSize ?? 54) + 'px';
+    }
   }
 
   _playVideo(){

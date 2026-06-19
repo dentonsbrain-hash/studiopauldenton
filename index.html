@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>studiopauldenton</title>
+  <meta name="description" content="StudioPaulDenton — spatial and speculative design work by Paul Denton." />
+  <meta name="author" content="Paul Denton" />
+  <meta name="theme-color" content="#090909" />
+  <link rel="canonical" href="https://studiopauldenton.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="studiopauldenton" />
+  <meta property="og:title" content="studiopauldenton" />
+  <meta property="og:description" content="StudioPaulDenton — spatial and speculative design work by Paul Denton." />
+  <meta property="og:url" content="https://studiopauldenton.com/" />
+  <meta property="og:video" content="https://studiopauldenton.com/teaser_sound_fix_1.mp4" />
+  <meta property="og:video:type" content="video/mp4" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="studiopauldenton" />
+  <meta name="twitter:description" content="StudioPaulDenton — spatial and speculative design work by Paul Denton." />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Paul Denton",
+      "url": "https://studiopauldenton.com/",
+      "sameAs": [
+        "https://www.instagram.com/studiopauldenton/"
+      ],
+      "jobTitle": "Designer and artist",
+      "description": "StudioPaulDenton — spatial and speculative design work by Paul Denton."
+    }
+  </script>
+</head>
+<body>
+  <button class="sound-toggle" type="button" aria-label="Mute video sound" aria-pressed="false">
+    <svg class="sound-icon sound-icon-on" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M4 9v6h4l5 4V5L8 9H4z"></path>
+      <path d="M16 8.5a4 4 0 0 1 0 7"></path>
+      <path d="M18.5 6a7 7 0 0 1 0 12"></path>
+    </svg>
+    <svg class="sound-icon sound-icon-off" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M4 9v6h4l5 4V5L8 9H4z"></path>
+      <path d="M17 9l5 5"></path>
+      <path d="M22 9l-5 5"></path>
+    </svg>
+  </button>
+
+  <div class="video-hero">
+    <video class="hero-video" autoplay loop muted playsinline preload="auto">
+      <source src="teaser_mobile.mp4" type="video/mp4" media="(max-width: 768px)" />
+      <source src="teaser_sound_fix_1.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="eyebrow">studiopauldenton</p>
+      <h1>Donation 001 drop imminent</h1>
+      <p>Subscribe to be notified when drop is confirmed</p>
+      <div class="hero-actions">
+        <a class="button" href="#subscribe">Subscribe</a>
+      </div>
+    </div>
+  </div>
+
+  <main class="content" id="details">
+    <section>
+      <h2>Inside the world of Paul Denton</h2>
+      <p>His work draws on science, philosophy, and belief systems, exploring ideas of consciousness, unknown phenomena, and the origins of creativity.</p>
+    </section>
+
+    <section class="tabs-section">
+      <div class="tab-list" role="tablist" aria-label="Main sections">
+        <button class="tab-button active" role="tab" aria-selected="true" data-tab="about">About</button>
+        <button class="tab-button" role="tab" aria-selected="false" data-tab="press">Press</button>
+        <button class="tab-button" role="tab" aria-selected="false" data-tab="subscribe">Subscribe</button>
+      </div>      <div class="tab-panels">
+        <div class="tab-panel active" data-panel="about">
+          <h3>About</h3>
+          <p>Paul Denton is a British designer and artist creating collectible objects that explore the intersection of design, narrative, and cultural mythology.</p>
+
+          <p>He studied Product Design at the University of Northampton before completing a Master’s degree in Vehicle Design at the Royal College of Art. Denton spent close to a decade at Ron Arad’s studio, working across design and digital sculpture, where he developed a deep understanding of experimental design, material form, and gallery culture.</p>
+
+          <p>Alongside his independent practice, he has spent over eleven years at GA Design Group contributing to award-winning international hospitality projects, refining a precision-led approach to form, atmosphere, and visual storytelling.</p>
+
+          <p>Influenced by thinkers such as Rupert Sheldrake, Jacques Vallée, and Diana Pasulka, Denton’s work explores objects as speculative artefacts positioned between the rational and the mythological. Through limited editions and material-driven processes, his work investigates how objects can operate simultaneously as design, evidence, and cultural signal.</p>
+
+          <p>Currently developing a debut series of limited-edition collectible works, The first collection will launch in 2026.</p>
+        </div>
+
+        <div class="tab-panel" data-panel="press">
+          <h3>Press</h3>
+        </div>
+
+        <div class="tab-panel" data-panel="subscribe" id="subscribe">
+          <h3>Subscribe for Launch Details</h3>
+          <p>Enter your email to be notified when Donation_001 drop is confirmed</p>
+          <form action="https://buttondown.com/api/emails/embed-subscribe/studiopauldenton" method="post" class="subscribe-form embeddable-buttondown-form">
+            <input type="email" name="email" id="bd-email-home" placeholder="Enter your email" aria-label="Email for launch updates" required />
+            <button class="button" type="submit">Notify Me</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a class="social-link" href="https://www.instagram.com/studiopauldenton/" target="_blank" rel="noopener noreferrer" aria-label="studiopauldenton on Instagram">
+      <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
+        <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+        <circle cx="12" cy="12" r="4"></circle>
+        <circle cx="17.5" cy="6.5" r="1"></circle>
+      </svg>
+    </a>
+    <p>© 2026 studiopauldenton</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

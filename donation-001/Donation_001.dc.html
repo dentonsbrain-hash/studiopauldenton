@@ -186,7 +186,7 @@
           <h2 style="font-family:'Space Grotesk', sans-serif; font-size:clamp(36px,5vw,68px); line-height:.95; font-weight:700; letter-spacing:-.02em; margin-top:10px; color:#e8e8e6;">Reserve the object.</h2>
         </div>
         <div style="text-align:right;">
-          <div data-price style="font-size:54px; font-weight:700; letter-spacing:-.02em; color:#ff4a1c;">{{ price }}</div>
+          <div data-price style="font-size:24px; font-weight:700; letter-spacing:-.02em; color:#ff4a1c;">{{ price }}</div>
           <button style="font-family:'Space Mono', monospace; font-size:13px; letter-spacing:.16em; text-transform:uppercase; background:#ff4a1c; color:#0d0d0f; border:none; padding:16px 30px; cursor:pointer; margin-top:14px;" style-hover="{{ hoverAcid }}">[ REQUEST ACCESS ]</button>
         </div>
       </div>
@@ -195,7 +195,7 @@
 
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;price&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;£3,500&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;editionSize&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:99,&quot;min&quot;:1,&quot;max&quot;:250,&quot;tsType&quot;:&quot;number&quot;},&quot;heroTextSize&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:150,&quot;min&quot;:48,&quot;max&quot;:340,&quot;step&quot;:2,&quot;tsType&quot;:&quot;number&quot;},&quot;priceTextSize&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:24,&quot;min&quot;:24,&quot;max&quot;:160,&quot;step&quot;:2,&quot;tsType&quot;:&quot;number&quot;},&quot;cutoutSizeMin&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:520,&quot;min&quot;:200,&quot;max&quot;:3000,&quot;step&quot;:20,&quot;tsType&quot;:&quot;number&quot;},&quot;cutoutSizeMax&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:4608,&quot;min&quot;:800,&quot;max&quot;:7000,&quot;step&quot;:20,&quot;tsType&quot;:&quot;number&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;price&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;£3,500&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;editionSize&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:99,&quot;min&quot;:1,&quot;max&quot;:250,&quot;tsType&quot;:&quot;number&quot;},&quot;heroTextSize&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:150,&quot;min&quot;:48,&quot;max&quot;:340,&quot;step&quot;:2,&quot;tsType&quot;:&quot;number&quot;},&quot;priceTextSize&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:24,&quot;min&quot;:16,&quot;max&quot;:160,&quot;step&quot;:2,&quot;tsType&quot;:&quot;number&quot;},&quot;cutoutSizeMin&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:520,&quot;min&quot;:200,&quot;max&quot;:3000,&quot;step&quot;:20,&quot;tsType&quot;:&quot;number&quot;},&quot;cutoutSizeMax&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:4608,&quot;min&quot;:800,&quot;max&quot;:7000,&quot;step&quot;:20,&quot;tsType&quot;:&quot;number&quot;}}">
 class Component extends DCLogic {
   state = { muted: true };
 
@@ -210,7 +210,7 @@ class Component extends DCLogic {
     }
     const p = document.querySelector('[data-price]');
     if (p){
-      p.style.fontSize = Number(this.props.priceTextSize ?? 54) + 'px';
+      p.style.fontSize = Number(this.props.priceTextSize ?? 24) + 'px';
     }
   }
 
